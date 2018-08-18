@@ -16,8 +16,11 @@ function copyTextIfAnyIsSelectedAndDisplayMessage() {
         copy();
 
         //display message
+        Toast.display(`Copied: "${selectedText}"`);
     }
 }
+
+Toast.addToastToPage();
 
 //listen for 'mouseup' and 'keyup' events
 document.addEventListener('mouseup', copyTextIfAnyIsSelectedAndDisplayMessage);

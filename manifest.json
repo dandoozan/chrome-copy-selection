@@ -15,7 +15,11 @@
                 "https://docs.google.com/*"
             ],
             "js": [
+                "js/toast.js",
                 "js/execScript.js"
+            ],
+            "css": [
+                "css/toast.css"
             ]
         }
     ]
