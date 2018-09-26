@@ -14,7 +14,7 @@ Taken from: https://www.w3schools.com/howto/howto_js_snackbar.asp
     border-radius: 2px; /* Rounded borders */
     padding: 15px 30px; /* Padding */
     position: fixed; /* Sit on bottom of the screen */
-    z-index: 1; /* Add a z-index if needed */
+    z-index: 1000000; /* Add a z-index if needed */
     /* left: 50%; Center the toast */
     /* bottom: 30px; 30px from the bottom */
     right: 50px;
