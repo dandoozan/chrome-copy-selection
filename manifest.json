@@ -2,25 +2,20 @@
     "name": "CopySelected",
     "version": "0.1",
     "description": "",
-    "permissions": [
-        "tabs",
-        "*://*/*"
-    ],
+    "permissions": ["tabs", "*://*/*"],
     "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google.com; object-src 'self'",
     "manifest_version": 2,
+    "browser_action": {},
     "content_scripts": [
         {
             "matches": ["*://*/*"],
-            "exclude_matches": [
-                "https://docs.google.com/*"
-            ],
-            "js": [
-                "js/toast.js",
-                "js/execScript.js"
-            ],
-            "css": [
-                "css/toast.css"
-            ]
+            "exclude_matches": ["https://docs.google.com/*"],
+            "js": ["js/toast.js", "js/execScript.js"],
+            "css": ["css/toast.css"]
         }
-    ]
+    ],
+    "background": {
+        "scripts": ["js/background_listenForReload.js"],
+        "persistent": false
+    }
 }
