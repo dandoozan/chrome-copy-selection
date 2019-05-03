@@ -2,12 +2,12 @@
     "name": "CopySelected",
     "version": "0.1",
     "description": "",
-    "permissions": ["tabs", "*://*/*", "clipboardWrite"],
+    "permissions": ["<all_urls>", "clipboardWrite"],
     "manifest_version": 2,
     "browser_action": {},
     "content_scripts": [
         {
-            "matches": ["*://*/*"],
+            "matches": ["<all_urls>"],
             "exclude_matches": ["https://docs.google.com/*"],
             "js": ["js/toast.js", "js/execScript.js"],
             "css": ["css/toast.css"]
