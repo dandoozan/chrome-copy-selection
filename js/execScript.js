@@ -33,12 +33,13 @@
                 copy();
 
                 //display message
-                Toast.display(`Copied: "${selectedText}"`);
+                toast.display(`Copied: "${selectedText}"`);
             }
         }
     }
 
-    Toast.addToastToPage();
+    //----------main----------
+    const toast = new Toast();
 
     //listen for 'mouseup' and 'keyup' events
     document.addEventListener('mouseup', copyTextIfApplicableAndDisplayMessage);
