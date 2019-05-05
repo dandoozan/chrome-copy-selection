@@ -1,8 +1,6 @@
-/*Stupidly, I'm creating my own toast b/c I can't find a good one that doesn't
+/*NOTE: I'm creating my own toast b/c I can't find a good one that doesn't
 require me to bring in bootstrap or jquery or something.  Since I don't want to
-load those onto every single page just for a simple toast, I'm creating my own, but,
-I agree, this is dumb.
-
+load those onto every single page just for a simple toast, I'm creating my own.
 Make this into an actual module in the future if I need it for something else.
 */
 
