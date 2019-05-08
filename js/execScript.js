@@ -41,7 +41,5 @@
     //----------main----------
     const notifier = new Notifier();
 
-    //listen for 'mouseup' and 'keyup' events
-    document.addEventListener('mouseup', copyTextIfApplicableAndDisplayMessage);
-    document.addEventListener('keyup', copyTextIfApplicableAndDisplayMessage);
+    document.addEventListener('selectionchange', copyTextIfApplicableAndDisplayMessage);
 })();
