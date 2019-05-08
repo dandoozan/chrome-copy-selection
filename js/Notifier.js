@@ -9,9 +9,15 @@ class Notifier {
     }
 
     createNotification(contentAsHtml) {
+        //create the element
         let div = document.createElement('div');
         div.id = this.ELEMENT_ID;
         div.innerHTML = contentAsHtml;
+
+        //add the click listener to remove it if clicked
+        div.addEventListener('click', this.removeNotification.bind(this));
+
+        //add it to the page
         document.body.appendChild(div);
         return div;
     }
