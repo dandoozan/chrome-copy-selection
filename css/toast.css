@@ -1,28 +1,28 @@
 /*The below is taken from: https://www.w3schools.com/howto/howto_js_snackbar.asp */
 
 #crx_toast {
-    visibility: hidden; /* Hidden by default. Visible on click */
-    min-width: 200px; /* Set a default minimum width */
+    /* visibility: hidden; */
+    min-width: 200px;
     max-width: 400px;
-    margin-left: -125px; /* Divide value of min-width by 2 */
-    background-color: #333; /* Black background color */
-    color: #fff; /* White text color */
-    text-align: center; /* Centered text */
-    border-radius: 2px; /* Rounded borders */
-    padding: 15px 30px; /* Padding */
-    position: fixed; /* Sit on bottom of the screen */
-    z-index: 1000000; /* Add a z-index if needed */
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 15px 30px;
+    position: fixed;
+    z-index: 1000000;
     right: 50px;
     top: 30px;
     font-family: Arial, Helvetica, sans-serif;
-}
-
-#crx_toast.show {
-    visibility: visible;
 
     /* Add animation: Take 0.5 seconds to fade in and out the toast.
     However, delay the fade out process for 2.5 seconds */
     animation: fadein 0.5s, fadeout 0.5s 2.5s;
+
+    /* Set animation-fill-mode to "forwards" so that the toast remains
+    hidden after the animation completes */
+    animation-fill-mode: forwards;
 }
 
 /* Animations to fade the toast in and out */
