@@ -9,8 +9,8 @@
         {
             "matches": ["<all_urls>"],
             "exclude_matches": ["https://docs.google.com/*"],
-            "js": ["js/toast.js", "js/execScript.js"],
-            "css": ["css/toast.css"]
+            "js": ["js/Notifier.js", "js/execScript.js"],
+            "css": ["css/style.css"]
         }
     ],
     "background": {
