@@ -8,13 +8,14 @@ class Notifier {
         this.ELEMENT_ID = 'crx_toast';
     }
 
-    createNotification(contentAsHtml) {
+    createNotification(title, body) {
         //create the element
         let div = document.createElement('div');
         div.id = this.ELEMENT_ID;
-        div.innerHTML = contentAsHtml;
+        div.innerHTML = `<div class="title">${title}</div>
+        <div class="body">"${body}"</div>`;
 
-        //add the click listener to remove it if clicked
+        //add the click listener to remove it when clicked
         div.addEventListener('click', this.removeNotification.bind(this));
 
         //add it to the page
@@ -28,13 +29,13 @@ class Notifier {
         }
     }
 
-    notify(contentAsHtml) {
+    notify(title, body) {
         //remove previous toast element if it exists (this could happen if notify is called
         //before the previous notification fades out; in this case, just remove the previous
         //notification and fade in a new one)
         this.removeNotification();
 
         //create new toast element
-        this.createNotification(contentAsHtml);
+        this.createNotification(title, body);
     }
 }

@@ -37,7 +37,7 @@
                 copy();
 
                 //display message
-                notifier.notify(`Copied: "${selectedText}"`);
+                notifier.notify('Copied text:', selectedText);
             }
         }
     }
