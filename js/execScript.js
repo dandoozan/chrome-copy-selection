@@ -31,8 +31,7 @@
         let div = document.createElement('div');
         div.innerHTML = `
             <script type="module">
-            // import 'https://raw.githubusercontent.com/PolymerElements/paper-toast/master/paper-toast.js';
-                import '${chrome.runtime.getURL('js/paper-toast.js')}';
+                import 'https://raw.githubusercontent.com/PolymerElements/paper-toast/master/paper-toast.js';
             </script>
             <paper-toast text="${msg}" opened></paper-toast>
         `;
