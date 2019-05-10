@@ -8,12 +8,13 @@ class Notifier {
         this.ELEMENT_ID = 'crx_toast';
     }
 
-    createNotification(title, body) {
+    createNotification(body) {
         //create the element
         let div = document.createElement('div');
         div.id = this.ELEMENT_ID;
-        div.innerHTML = `<div class="title">${title}</div>
-        <div class="body">"${body}"</div>`;
+        // div.innerHTML = `<div class="title">${title}</div>
+        // <div class="body">"${body}"</div>`;
+        div.innerHTML = body;
 
         //add the click listener to remove it when clicked
         div.addEventListener('click', this.removeNotification.bind(this));

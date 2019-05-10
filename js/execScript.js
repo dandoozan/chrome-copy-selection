@@ -26,6 +26,20 @@
         return isInputElement(getFocusedElement());
     }
 
+    //tbx
+    function addPaperToast(msg) {
+        let div = document.createElement('div');
+        div.innerHTML = `
+            <script type="module">
+            // import 'https://raw.githubusercontent.com/PolymerElements/paper-toast/master/paper-toast.js';
+                import '${chrome.runtime.getURL('js/paper-toast.js')}';
+            </script>
+            <paper-toast text="${msg}" opened></paper-toast>
+        `;
+
+        document.body.appendChild(div);
+    }
+
     function copyTextIfApplicableAndDisplayMessage(ev) {
         if (!inputFieldHasFocus()) {
             let selectedText = getSelectedText();
@@ -37,7 +51,10 @@
                 copy();
 
                 //display message
-                notifier.notify('Copied text:', selectedText);
+                notifier.notify(`Copied: "${selectedText}"`);
+
+                //tbx
+                addPaperToast(selectedText);
             }
         }
     }
