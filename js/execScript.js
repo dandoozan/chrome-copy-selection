@@ -27,20 +27,20 @@
     }
 
     //tbx
-    function addPaperToast(msg) {
-        let div = document.createElement('div');
-        div.innerHTML = `
-            <script type="module">
-                import 'https://raw.githubusercontent.com/PolymerElements/paper-toast/master/paper-toast.js';
-            </script>
-            <paper-toast text="${msg}" opened></paper-toast>
-        `;
+    // function addPaperToast(msg) {
+    //     let div = document.createElement('div');
+    //     div.innerHTML = `
+    //         <script type="module">
+    //             import '@polymer/paper-toast/paper-toast.js';
+    //         </script>
+    //         <paper-toast text="${msg}" opened></paper-toast>
+    //     `;
 
-        document.body.appendChild(div);
-    }
+    //     document.body.appendChild(div);
+    // }
 
     function copyTextIfApplicableAndDisplayMessage(ev) {
-        if (!inputFieldHasFocus()) {
+        // if (!inputFieldHasFocus()) {
             let selectedText = getSelectedText();
             // console.log(`selectedText="${selectedText}"`);
 
@@ -53,9 +53,9 @@
                 notifier.notify(`Copied: "${selectedText}"`);
 
                 //tbx
-                addPaperToast(selectedText);
+                // addPaperToast(selectedText);
             }
-        }
+        // }
     }
 
     function handleKeyUp(ev) {
