@@ -30,36 +30,34 @@
         return isInputElement(getFocusedElement());
     }
 
-    function copyTextIfApplicableAndDisplayMessage() {
+    function copySelectedTextIfApplicable() {
         // if (!inputFieldHasFocus()) {
         let selectedText = getSelectedText();
-        console.log(`selectedText="${selectedText}"`);
 
-        currentSelectedText = selectedText;
-        if (selectedText) {
+        //check that selectedText is truthy to ensure we have something to copy AND check
+        //that selectedText != currentSelectedText so that I don't do unnecessary work (of
+        //double copying and also showing the toast twice for the same text); in other
+        //words, if there is text already selected on the page, then it has already been
+        //copied and the user has already been shown a toast about it, so don't show it again
+        console.log(`selectedText="${selectedText}; currentSelectedText="${currentSelectedText}"`);
+        if (selectedText && selectedText !== currentSelectedText) {
             //copy the selected text
             copy();
 
             //display toast
             notifier.notify(`Copied: "${selectedText}"`);
         }
+
+        currentSelectedText = selectedText;
         // }
     }
 
     function handleMouseUp(event) {
-        copyTextIfApplicableAndDisplayMessage();
+        copySelectedTextIfApplicable();
     }
 
     function handleKeyUp(event) {
-        let selectedText = getSelectedText();
-
-        //add this check to prevent the toast from showing when the
-        //user makes unrelated keyboard presses (eg. pressing "down" to
-        //scroll down the page) (without this check, the toast will show
-        //up everytime the user presses "down")
-        if (selectedText !== currentSelectedText) {
-            copyTextIfApplicableAndDisplayMessage();
-        }
+        copySelectedTextIfApplicable();
     }
 
     function handleCopyEvent(event) {
@@ -67,9 +65,9 @@
 
         //if there is no selected text on the page, then copy the url
         if (!selectedText) {
-            let textToCopy = getPageUrl();
 
-            //write the url to the clipboard
+            //copy the url
+            let textToCopy = getPageUrl();
             event.clipboardData.setData('text/plain', textToCopy);
 
             //display toast
