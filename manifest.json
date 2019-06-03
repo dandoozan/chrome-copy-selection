@@ -9,7 +9,7 @@
         {
             "matches": ["<all_urls>"],
             "exclude_matches": ["https://docs.google.com/*"],
-            "js": ["js/Notifier.js", "js/execScript.js"],
+            "js": ["js/Toast.js", "js/execScript.js"],
             "css": ["css/style.css"]
         }
     ],
