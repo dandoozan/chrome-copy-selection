@@ -1,6 +1,4 @@
 (() => {
-    let currentSelectedText = '';
-
     function getPageUrl() {
         return window.location.href;
     }
@@ -31,7 +29,7 @@
     }
 
     function displayToast(msg) {
-        notifier.notify(`Copied: "${msg}"`);
+        toast.show(`Copied: "${msg}"`);
     }
 
     function copySelectedTextIfApplicable() {
@@ -83,7 +81,8 @@
     }
 
     //----------main----------
-    const notifier = new Notifier();
+    const toast = new Toast();
+    let currentSelectedText = '';
 
     //add event listeners
     document.addEventListener('mouseup', handleMouseUp);
