@@ -30,6 +30,10 @@
         return isInputElement(getFocusedElement());
     }
 
+    function displayToast(msg) {
+        notifier.notify(`Copied: "${msg}"`);
+    }
+
     function copySelectedTextIfApplicable() {
         // if (!inputFieldHasFocus()) {
         let selectedText = getSelectedText();
@@ -45,7 +49,7 @@
             copy();
 
             //display toast
-            notifier.notify(`Copied: "${selectedText}"`);
+            displayToast(selectedText);
         }
 
         currentSelectedText = selectedText;
@@ -71,7 +75,7 @@
             event.clipboardData.setData('text/plain', textToCopy);
 
             //display toast
-            notifier.notify(`Copied: "${textToCopy}"`);
+            displayToast(textToCopy);
 
             //prevent default to prevent the browser from executing a "copy" command
             event.preventDefault();
