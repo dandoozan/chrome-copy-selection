@@ -1,5 +1,5 @@
 {
-    "name": "CopySelected",
+    "name": "CopySelection",
     "version": "0.1",
     "description": "",
     "permissions": ["<all_urls>", "clipboardWrite"],
