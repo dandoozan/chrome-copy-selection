@@ -1,4 +1,6 @@
-(() => {
+import { Toast } from './_Toast'
+
+(function main() {
     function getPageUrl() {
         return window.location.href;
     }
@@ -41,7 +43,9 @@
         //double copying and also showing the toast twice for the same text); in other
         //words, if there is text already selected on the page, then it has already been
         //copied and the user has already been shown a toast about it, so don't show it again
-        console.log(`selectedText="${selectedText}; currentSelectedText="${currentSelectedText}"`);
+        console.log(
+            `selectedText="${selectedText}; currentSelectedText="${currentSelectedText}"`
+        );
         if (selectedText && selectedText !== currentSelectedText) {
             //copy the selected text
             copy();
@@ -67,7 +71,6 @@
 
         //if there is no selected text on the page, then copy the url
         if (!selectedText) {
-
             //copy the url
             let textToCopy = getPageUrl();
             event.clipboardData.setData('text/plain', textToCopy);

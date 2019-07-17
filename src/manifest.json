@@ -9,12 +9,12 @@
         {
             "matches": ["<all_urls>"],
             "exclude_matches": ["https://docs.google.com/*"],
-            "js": ["js/Toast.js", "js/execScript.js"],
-            "css": ["css/style.css"]
+            "js": ["js/contentScripts/_main.bundle.js"],
+            "css": ["css/toast.css"]
         }
     ],
     "background": {
-        "scripts": ["js/background_listenForReload.js"],
+        "scripts": ["js/background/background.bundle.js"],
         "persistent": false
     }
 }
