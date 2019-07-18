@@ -12,11 +12,6 @@
     padding: 15px 30px;
     max-width: 400px;
 
-    /*max-width: 50vw; /* 50% view-width*/
-    /*max-width: calc(100vw - 100px - 60px); /* 100% view-width - "right"*2 - padding */
-    /* border-radius: 10px; */
-    /* box-shadow: 8px 5px 10px 0px #555; */
-
     /* Add animation: Take 0.5 seconds to fade in and out the toast.
     However, delay the fade out process for 2.5 seconds */
     animation: fadein 0.5s, fadeout 0.5s 2.5s;

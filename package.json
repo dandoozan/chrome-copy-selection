@@ -1,5 +1,5 @@
 {
-    "name": "chromeextension",
+    "name": "chrome-copy-selection",
     "version": "1.0.0",
     "description": "",
     "dependencies": {},

@@ -1,3 +1,3 @@
 # CopySelection
 
-Automatically copy selected text.
+A chrome extension to automatically copy selected text (except when in input fields).
