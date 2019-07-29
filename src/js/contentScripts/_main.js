@@ -2,18 +2,6 @@ import { showToast } from './_toast';
 
 let currentSelectedText = '';
 
-function getPageUrl() {
-    return window.location.href;
-}
-
-function getSelectedText() {
-    return window.getSelection().toString();
-}
-
-function copy() {
-    document.execCommand('copy');
-}
-
 function isInputElement(el) {
     return (
         el.tagName === 'INPUT' ||
@@ -23,12 +11,12 @@ function isInputElement(el) {
     );
 }
 
-function getFocusedElement() {
-    return document.activeElement;
+function inputFieldHasFocus() {
+    return isInputElement(document.activeElement);
 }
 
-function inputFieldHasFocus() {
-    return isInputElement(getFocusedElement());
+function getSelectedText() {
+    return window.getSelection().toString();
 }
 
 function displayToast(msg) {
@@ -47,7 +35,7 @@ function copySelectedTextIfApplicable() {
         // console.log(`selectedText="${selectedText}; currentSelectedText="${currentSelectedText}"`);
         if (selectedText && selectedText !== currentSelectedText) {
             //copy the selected text
-            copy();
+            document.execCommand('copy');
 
             //display toast
             displayToast(selectedText);
@@ -71,7 +59,7 @@ function handleCopyEvent(event) {
     //if there is no selected text on the page, then copy the url
     if (!selectedText) {
         //copy the url
-        let textToCopy = getPageUrl();
+        let textToCopy = window.location.href;
         event.clipboardData.setData('text/plain', textToCopy);
 
         //display toast
