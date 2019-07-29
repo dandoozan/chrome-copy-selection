@@ -51,16 +51,7 @@ module.exports = {
                 })
         ),
     ],
-    module: {
-        rules: [
-            {
-                //css rule
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-            },
-        ],
-    },
-    devtool: 'cheap-source-map',
+    devtool: 'inline-source-map',
     resolve: {
         //set "symlinks" to false so that webpack looks for dependencies in this project (not in the symlinked
         //file location).  This allows me to use dependencies (eg. lodash) in my "utils" file (which i symlink
