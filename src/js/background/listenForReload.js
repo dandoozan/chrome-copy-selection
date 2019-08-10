@@ -1,1 +1,1 @@
-../../../../_CommonChromeExtensions/listenForReload.js
+../../../../_CommonChromeExtensions/dist/listenForReload.js
