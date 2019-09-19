@@ -58,12 +58,17 @@ function handleCopyEvent(event) {
 
     //if there is no selected text on the page, then copy the url
     if (!selectedText) {
-        //copy the url
-        let textToCopy = window.location.href;
-        event.clipboardData.setData('text/plain', textToCopy);
+        let url = window.location.href;
+
+        //put the url in an anchor tag so that it's copied as a link to the clipboard (so that
+        //when it's pasted, it gets pasted as a link (instead of just plaintext))
+        event.clipboardData.setData('text/html', `<a href="${url}">${url}</a>`);
+
+        //fallback to plaintext if the above doesn't work (per MDN recommendation)
+        event.clipboardData.setData('text/plain', url);
 
         //display toast
-        displayToast(textToCopy);
+        displayToast(url);
 
         //prevent default to prevent the browser from executing a "copy" command
         event.preventDefault();
