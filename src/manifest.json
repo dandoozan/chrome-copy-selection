@@ -1,20 +1,20 @@
 {
-    "name": "CopySelection",
-    "version": "0.1",
-    "description": "",
-    "permissions": ["<all_urls>", "clipboardWrite"],
-    "manifest_version": 2,
-    "browser_action": {},
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "exclude_matches": ["https://docs.google.com/*"],
-            "js": ["js/contentScripts/_main.bundle.js"],
-            "css": ["css/toast.css"]
-        }
-    ],
-    "background": {
-        "scripts": ["js/background/background.bundle.js"],
-        "persistent": false
+  "name": "CopySelection",
+  "version": "0.1",
+  "description": "",
+  "permissions": ["<all_urls>", "clipboardWrite"],
+  "manifest_version": 2,
+  "browser_action": {},
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "exclude_matches": ["https://docs.google.com/*"],
+      "js": ["js/contentScripts/_main.bundle.js"],
+      "css": ["css/toast.css"]
     }
+  ],
+  "background": {
+    "scripts": ["js/background/background.bundle.js"],
+    "persistent": false
+  }
 }
