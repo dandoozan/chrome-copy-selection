@@ -7,7 +7,7 @@ function createToastElement(body) {
   div.innerHTML = body;
 
   //add the click listener to remove it when clicked
-  div.addEventListener('click', removeToastElement);
+  // div.addEventListener('click', removeToastElement);
 
   //add it to the page
   document.body.appendChild(div);
