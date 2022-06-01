@@ -28,3 +28,10 @@ export function showToast(msg) {
   //create new toast element
   createToastElement(msg);
 }
+
+//Remove the toast element so that it doesn't interfere with interacting with other things on the page
+document.addEventListener('animationend', function (e) {
+  if (e.animationName === 'fadeout') {
+    removeToastElement();
+  }
+});
